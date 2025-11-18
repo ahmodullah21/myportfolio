@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ahmodullah | IT Officer & Network Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Ahmodullah, IT Officer & Network Specialist with 7+ years of experience in networking, system support, and lab management." />
+
+  <style>
+    /* ====== GLOBAL & SMOOTH SCROLL ====== */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ====== RESET & BASE ====== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    /* ====== LAYOUT ====== */
+    .page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    @media (min-width: 900px) {
+      .page {
+        grid-template-columns: 320px minmax(0, 1.8fr);
+      }
+    }
+
+    /* ====== SIDEBAR ====== */
+    .sidebar {
+      background: radial-gradient(circle at top left, #1d4ed8, #020617 55%, #000 100%);
+      padding: 32px 24px 40px;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      box-shadow: 0 0 40px rgba(15,23,42,0.8);
+    }
+
+    .avatar-wrapper {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid rgba(191,219,254,0.7);
+      margin-bottom: 16px;
+    }
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .role {
+      margin-top: 8px;
+      font-size: 0.98rem;
+      color: #cbd5f5;
+    }
+    .tagline {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #e5e7f5;
+    }
+    .sidebar-section {
+      margin-top: 28px;
+    }
+    .sidebar-section h3 {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+    .contact-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+    .contact-list li + li { margin-top: 6px; }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .badge {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(148,163,184,0.6);
+      white-space: nowrap;
+    }
+
+    .nav {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+    .nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+    .nav a:hover {
+      background: rgba(56,189,248,0.12);
+      border-color: #38bdf8;
+      text-decoration: none;
+    }
+
+    /* ====== MAIN CONTENT ====== */
+    .main {
+      padding: 24px 20px 40px;
+    }
+    @media (min-width: 900px) {
+      .main { padding: 40px 40px 60px; }
+    }
+    .section {
+      background: rgba(15,23,42,0.9);
+      border-radius: 18px;
+      padding: 20px 18px;
+      border: 1px solid rgba(148,163,184,0.4);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.85);
+      margin-bottom: 20px;
+    }
+    @media (min-width: 800px) {
+      .section { padding: 24px 24px; margin-bottom: 24px; }
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+    .section-subtitle {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    .section p { font-size: 0.92rem; color: #e5e7eb; }
+
+    /* ====== TIMELINE (EXPERIENCE / EDUCATION / TRAINING) ====== */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 4px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(55,65,81,0.8);
+    }
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    @media (min-width: 720px) {
+      .timeline-item {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 18px;
+      }
+    }
+    .timeline-meta {
+      font-size: 0.82rem;
+      color: #9ca3af;
+    }
+    .timeline-role {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+    .timeline-org {
+      font-size: 0.9rem;
+      color: #cbd5f5;
+    }
+    .timeline-location {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .timeline-list {
+      margin-top: 6px;
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+    .timeline-list li + li { margin-top: 3px; }
+
+    /* ====== GRID ====== */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+    @media (min-width: 720px) {
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    /* ====== PROJECTS ====== */
+    .project {
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(55,65,81,0.8);
+    }
+    .project:last-child { border-bottom: none; }
+    .project-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+    .project-tag {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+      <div>
+        <!-- YOUR IMAGE HERE -->
+        <div class="avatar-wrapper">
+          <!-- image file name/path change kore tomar real image boshao -->
+          <img src="Ahmodullah_Picture.jpg" alt="Photo of Ahmodullah" class="avatar" />
+        </div>
+
+        <div class="name">Ahmodullah</div>
+        <div class="role">IT Officer & Network Specialist</div>
+        <p class="tagline">
+          7+ years' experience in networking, system support, computer lab management,
+          and IT infrastructure for academic institutions.
+        </p>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li><strong>Mobile:</strong> <a href="tel:+8801790333776">+880 1790-333776</a></li>
+          <li><strong>Email:</strong> <a href="mailto:itahmodullah@gmail.com">itahmodullah@gmail.com</a></li>
+          <li><strong>Present:</strong> Hemayetpur, Savar, Dhaka</li>
+          <li><strong>Permanent:</strong> Salimabad, Nagarpur, Tangail</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Core Skills</h3>
+        <div class="badge-list">
+          <span class="badge">LAN / WAN</span>
+          <span class="badge">Router Config</span>
+          <span class="badge">Network Troubleshooting</span>
+          <span class="badge">Windows &amp; Linux</span>
+          <span class="badge">PC Assembly</span>
+          <span class="badge">IP Camera &amp; NVR</span>
+          <span class="badge">Printer Support</span>
+          <span class="badge">Lab Management</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Quick Nav</h3>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#training">Training</a>
+          <a href="#references">References</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main">
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="section-header">
+          <h2 class="section-title">About</h2>
+          <span class="section-subtitle">Short professional introduction</span>
+        </div>
+        <p>
+          I am an IT professional with over <strong>7 years of experience</strong> in
+          computer networking, system support, and lab management in the higher education sector.
+          I specialize in configuring and troubleshooting <strong>LAN/WAN networks, routers, Wi-Fi, Windows &amp; Linux systems, and IP cameras/NVR</strong>.
+        </p>
+        <br />
+        <p>
+          Currently, I work as an <strong>IT Officer at Uttara University</strong>, where I support
+          the Office of IT in managing network infrastructure, user support, IT security, and hardware maintenance.
+          My goal is to ensure stable, secure, and user-friendly IT environments that help students,
+          faculty, and staff work efficiently.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Experience</h2>
+          <span class="section-subtitle">Professional roles & responsibilities</span>
+        </div>
+
+        <div class="timeline">
+
+          <!-- IT OFFICER -->
+          <article class="timeline-item">
+            <div>
+              <div class="timeline-meta">Nov 22, 2024 – Present</div>
+            </div>
+            <div>
+              <div class="timeline-role">IT Officer</div>
+              <div class="timeline-org">Uttara University – Office of IT</div>
+              <div class="timeline-location">Dhaka, Bangladesh</div>
+              <ul class="timeline-list">
+                <li>Configure, monitor, and troubleshoot <strong>LAN, WAN, and Wi-Fi</strong> networks.</li>
+                <li>Ensure IT security through access controls, backups, and firewalls.</li>
+                <li>Install, configure, and maintain operating systems and essential software.</li>
+                <li>Provide on-site, remote, and phone-based support to users.</li>
+                <li>Maintain and repair IT hardware including PCs, printers, and peripherals.</li>
+                <li>Manage access controls, <strong>NVR and IP camera</strong> systems.</li>
+                <li>Track IT inventory and support procurement processes.</li>
+                <li>Provide technical assistance and training on IT tools and security best practices.</li>
+                <li>Maintain IT documentation and ensure compliance with organizational standards.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SENIOR LAB ASSISTANT -->
+          <article class="timeline-item">
+            <div>
+              <div class="timeline-meta">Jan 01, 2024 – Nov 22, 2024</div>
+            </div>
+            <div>
+              <div class="timeline-role">Senior Lab Assistant (Computer)</div>
+              <div class="timeline-org">Uttara University – Department of CSE</div>
+              <div class="timeline-location">Dhaka, Bangladesh</div>
+              <ul class="timeline-list">
+                <li>Oversaw and managed <strong>13 computer labs</strong>, ensuring smooth daily operations.</li>
+                <li>Planned, designed, and implemented departmental computer labs and Wi-Fi zones.</li>
+                <li>Diagnosed and resolved hardware, software, and network connectivity issues.</li>
+                <li>Configured routers, LAN cabling, and monitored network connectivity.</li>
+                <li>Installed and maintained access control, NVR, and IP camera systems.</li>
+                <li>Deployed and managed software applications, updates, and patches.</li>
+                <li>Provided training and guidance to lab assistants on best practices.</li>
+                <li>Managed IT and lab equipment inventory and supported the Office of IT.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- LAB ASSISTANT -->
+          <article class="timeline-item">
+            <div>
+              <div class="timeline-meta">Jun 01, 2018 – Dec 31, 2023</div>
+            </div>
+            <div>
+              <div class="timeline-role">Lab Assistant (Computer)</div>
+              <div class="timeline-org">Uttara University – Department of CSE</div>
+              <div class="timeline-location">Dhaka, Bangladesh</div>
+              <ul class="timeline-list">
+                <li>Established computer labs for the CSE department for practical learning and experiments.</li>
+                <li>Provided network systems administration and troubleshooting support for lab facilities.</li>
+                <li>Diagnosed and resolved hardware, software, and connectivity problems.</li>
+                <li>Assembled and troubleshot desktop computers.</li>
+                <li>Provided technical support for University G-Suite accounts to CSE students.</li>
+                <li>Installed, maintained, and troubleshot printers and network printers.</li>
+                <li>Supported activities associated with the Office of IT and maintained lab inventory.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Skills</h2>
+          <span class="section-subtitle">Technical & professional</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size:0.95rem;margin-bottom:4px;">Networking</h3>
+            <ul class="timeline-list">
+              <li>LAN networking and structured cabling.</li>
+              <li>Router and basic switch configuration.</li>
+              <li>Network troubleshooting and performance monitoring.</li>
+              <li>Wi-Fi configuration and optimization.</li>
+              <li>Firewall and access control setup.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-size:0.95rem;margin-bottom:4px;">System &amp; Hardware</h3>
+            <ul class="timeline-list">
+              <li>Desktop assembly and hardware maintenance.</li>
+              <li>Microsoft Windows (98, 7, 8, 10, 11, XP) installation &amp; troubleshooting.</li>
+              <li>Basic Linux installation and configuration.</li>
+              <li>Printer and network printer setup &amp; support.</li>
+              <li>User account and permission management.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:10px;">
+          <div>
+            <h3 style="font-size:0.95rem;margin-bottom:4px;">Programming</h3>
+            <ul class="timeline-list">
+              <li>C / C++ programming (fundamentals &amp; problem solving).</li>
+              <li>Web basics: HTML &amp; CSS.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-size:0.95rem;margin-bottom:4px;">Applications</h3>
+            <ul class="timeline-list">
+              <li>Microsoft Office package.</li>
+              <li>Adobe Photoshop &amp; Illustrator.</li>
+              <li>Video editing using Filmora and Camtasia.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+            <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Highlighted Work</h2>
+          <span class="section-subtitle">Selected projects & responsibilities</span>
+        </div>
+
+        <!-- FINAL YEAR PROJECT: GADGET KINBO -->
+        <div class="project">
+          <div class="project-tag">Web Development | E-commerce</div>
+          <div class="project-title">Gadget Kinbo – Dynamic E-commerce Website (PHP)</div>
+          <p>
+            Developed a dynamic e-commerce website named <strong>Gadget Kinbo</strong>
+            (<a href="https://www.gadgetkinbo.com" target="_blank" rel="noopener noreferrer">www.gadgetkinbo.com</a>)
+            as my final year project. The platform allows users to browse gadgets, add items to the cart,
+            and place orders, while the admin panel provides full control over products, categories,
+            users, and orders.
+          </p>
+
+          <ul style="margin-left:18px; margin-top:8px; font-size:0.9rem;">
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>Backend:</strong> PHP (dynamic website with server-side logic)</li>
+            <li><strong>Database:</strong> MySQL</li>
+            <li><strong>Key Features:</strong> Product listing, product details, shopping cart, checkout,
+                user registration & login, order management</li>
+            <li><strong>Admin Panel:</strong> Manage products, categories, users, and orders with
+                secure login and protected routes</li>
+            <li><strong>Responsive Design:</strong> Layout optimized for both desktop and mobile users</li>
+            <li><strong>Live Site:</strong>
+              <a href="https://www.gadgetkinbo.com" target="_blank" rel="noopener noreferrer">
+                www.gadgetkinbo.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- OTHER HIGHLIGHTED WORK -->
+        <div class="project">
+          <div class="project-tag">Network &amp; Infrastructure</div>
+          <div class="project-title">Campus Network &amp; Wi-Fi Management – Uttara University</div>
+          <p>
+            Managed and troubleshot LAN, WAN, and Wi-Fi infrastructure for academic and administrative units,
+            ensuring stable connectivity and secure access for staff and students.
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-tag">Lab Management</div>
+          <div class="project-title">Design &amp; Operation of 13 Computer Labs</div>
+          <p>
+            Planned, designed, and maintained multiple computer labs, including hardware deployment,
+            software roll-outs, network connectivity, and ongoing technical support.
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-tag">Security Systems</div>
+          <div class="project-title">IP Camera &amp; NVR System Implementation</div>
+          <p>
+            Installed and configured IP cameras, NVR, and access control systems to improve campus
+            surveillance and security monitoring, including user training and maintenance.
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="project-tag">User Support</div>
+          <div class="project-title">IT Helpdesk &amp; G-Suite Support</div>
+          <p>
+            Provided hardware, software, and account support to students and staff,
+            including troubleshooting, OS and application setup, and G-Suite account assistance.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- EDUCATION -->
+      <section id="education" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Education</h2>
+          <span class="section-subtitle">Academic background</span>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-meta">2025</div>
+            </div>
+            <div>
+              <div class="timeline-role">B.Sc. in Computer Science &amp; Engineering</div>
+              <div class="timeline-org">European University of Bangladesh</div>
+              <ul class="timeline-list">
+                <li>CGPA: 3.30 out of 4.00</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-meta">2017</div>
+            </div>
+            <div>
+              <div class="timeline-role">Diploma in Engineering (Computer Technology)</div>
+              <div class="timeline-org">Tangail Polytechnic Institute</div>
+              <ul class="timeline-list">
+                <li>CGPA: 3.45 out of 4.00</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-meta">2013</div>
+            </div>
+            <div>
+              <div class="timeline-role">Secondary School Certificate (Dakhil) – Science</div>
+              <div class="timeline-org">Namazgarh Gausul Azam Kamil Madrasah</div>
+              <ul class="timeline-list">
+                <li>GPA: 5.00 out of 5.00</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAINING -->
+      <section id="training" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Industrial Training</h2>
+          <span class="section-subtitle">Professional development</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-meta">Aug 01, 2017 – Oct 31, 2017</div>
+            </div>
+            <div>
+              <div class="timeline-role">Networking Training</div>
+              <div class="timeline-org">Smart IT Limited</div>
+              <div class="timeline-location">Adabar-01, Mohammadpur, Dhaka</div>
+              <p style="margin-top:6px;font-size:0.9rem;">
+                Completed focused training on computer networking fundamentals, configuration,
+                and troubleshooting of network devices and related infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REFERENCES -->
+      <section id="references" class="section">
+        <div class="section-header">
+          <h2 class="section-title">References</h2>
+          <span class="section-subtitle">Professional &amp; academic</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size:0.95rem;">Dr. Mohammad Amanul Islam</h3>
+            <p style="font-size:0.9rem;">
+              Assistant Professor, Department of CSE<br />
+              Uttara University, Dhaka, Bangladesh<br />
+              <strong>Mobile:</strong> 01914153325<br />
+              <strong>Email:</strong> <a href="mailto:aman.cse.bd@gmail.com">aman.cse.bd@gmail.com</a><br />
+              <strong>Relation:</strong> Professional
+            </p>
+          </div>
+          <div>
+            <h3 style="font-size:0.95rem;">Nixon Shuaeb</h3>
+            <p style="font-size:0.9rem;">
+              Instructor (Computer), Tangail Polytechnic Institute<br />
+              Tangail, Bangladesh<br />
+              <strong>Mobile:</strong> 01716090119<br />
+              <strong>Email:</strong> <a href="mailto:nixon.cse28@gmail.com">nixon.cse28@gmail.com</a><br />
+              <strong>Relation:</strong> Academic
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION (BOTTOM) -->
+      <section id="contact" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <span class="section-subtitle">Get in touch</span>
+        </div>
+        <p>
+          If you need IT support, network setup, lab management, or want to discuss a project or opportunity,
+          feel free to contact me:
+        </p>
+        <br />
+        <ul class="timeline-list">
+          <li><strong>Mobile:</strong> <a href="tel:+8801790333776">+880 1790-333776</a></li>
+          <li><strong>Email:</strong> <a href="mailto:itahmodullah@gmail.com">itahmodullah@gmail.com</a></li>
+          <li><strong>Present Address:</strong> Hemayetpur, Savar, Dhaka</li>
+          <li><strong>Permanent Address:</strong> Salimabad, Nagarpur, Tangail</li>
+        </ul>
+      </section>
+
+      <footer>
+        &copy; <span id="year"></span> Ahmodullah — IT Officer &amp; Network Specialist
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // dynamic year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
